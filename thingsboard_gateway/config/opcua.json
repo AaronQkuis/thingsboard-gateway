@@ -4,7 +4,7 @@
     "url": "localhost:4840/freeopcua/server/",
     "timeoutInMillis": 5000,
     "scanPeriodInMillis": 5000,
-    "disableSubscriptions": false,
+    "disableSubscriptions":true,
     "subCheckPeriodInMillis": 100,
     "showMap": false,
     "security": "Basic128Rsa15",
@@ -13,37 +13,37 @@
     },
     "mapping": [
       {
-        "deviceNodePattern": "Root\\.Objects\\.Device1",
-        "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
+        "deviceNodePattern": "${ns=2;i=1}",
+        "deviceNamePattern": "${ns=2;i=2}",
         "attributes": [
           {
-            "key": "temperature °C",
+            "key": "switch",
             "path": "${ns=2;i=5}"
           }
         ],
         "timeseries": [
           {
             "key": "humidity",
-            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}"
+            "path": "${ns=2;i=4}"
           },
           {
             "key": "batteryLevel",
-            "path": "${Battery\\.batteryLevel}"
+            "path": "${ns=2;i=3}"
+          },
+          {
+            "key": "temperature °C",
+            "path": "${ns=2;i=6}"
           }
         ],
         "rpc_methods": [
           {
-            "method": "multiply",
-            "arguments": [
-              2,
-              4
-            ]
+            "method": "set_value"
           }
         ],
         "attributes_updates": [
           {
             "attributeOnThingsBoard": "deviceName",
-            "attributeOnDevice": "Root\\.Objects\\.Device1\\.serialNumber"
+            "attributeOnDevice": "${ns=2;i=2}"
           }
         ]
       }

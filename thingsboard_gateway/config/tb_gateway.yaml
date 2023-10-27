@@ -1,5 +1,5 @@
 thingsboard:
-  host: thingsboard.cloud
+  host: localhost
   port: 1883
   remoteShell: false
   remoteConfiguration: false
@@ -15,7 +15,7 @@ thingsboard:
     inactivityTimeoutSeconds: 120
     inactivityCheckPeriodSeconds: 10
   security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
+    accessToken: qi110h6vu1ozgfmecbjl
   qos: 1
 storage:
   type: memory
@@ -41,9 +41,9 @@ grpc:
   minPingIntervalWithoutDataMs: 5000
 connectors:
   -
-    name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
+    name: OPC-UA Connector
+    type: opcua
+    configuration: opcua.json
 
 #  -
 #    name: Modbus Connector
