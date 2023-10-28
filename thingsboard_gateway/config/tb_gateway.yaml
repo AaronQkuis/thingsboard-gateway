@@ -1,6 +1,6 @@
 thingsboard:
   host: localhost
-  port: 1883
+  port: 1886
   remoteShell: false
   remoteConfiguration: false
   statistics:
@@ -15,7 +15,7 @@ thingsboard:
     inactivityTimeoutSeconds: 120
     inactivityCheckPeriodSeconds: 10
   security:
-    accessToken: qi110h6vu1ozgfmecbjl
+    accessToken: vkWocZ42J1iam5q2oSqC
   qos: 1
 storage:
   type: memory
